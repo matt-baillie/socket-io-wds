@@ -40,6 +40,9 @@ body {
   margin-right: 1rem;
   flex-grow: 1;
 }
+#form div:nth-of-type(1) {
+  margin-bottom: 0.5rem;
+}
 #form label {
   margin-right: 1rem;
   width: 10%;
