@@ -1,4 +1,4 @@
-import { io } from "socket.io-client";
+import { io } from "https://cdn.socket.io/4.4.1/socket.io.esm.min.js";
 
 const joinRoomButton = document.querySelector("#room-button");
 
