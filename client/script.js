@@ -1,8 +1,13 @@
+import { io } from "socket.io-client";
+
 const joinRoomButton = document.querySelector("#room-button");
 
 const messageInput = document.querySelector("#message-input");
 const roomInput = document.querySelector("#room-input");
 const form = document.querySelector("#form");
+
+const socket = io("http://localhost:3000");
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const message = messageInput.value;
