@@ -16,6 +16,7 @@ form.addEventListener("submit", (e) => {
 
 joinRoomButton.addEventListener("click", () => {
   const room = roomInput.value;
+  console.log(room);
 });
 
 const displayMessage = (message) => {
