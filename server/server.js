@@ -1,7 +1,26 @@
+const { instrument } = require("@socket.io/admin-ui");
+// const { Server } = require("socket.io");
+// const { createServer } = require("http");
+// const httpServer = createServer();
+// const io = new Server(httpServer, {
+//   cors: {
+//     origin: ["https://admin.socket.io"],
+//     credentials: true,
+//   },
+// });
+
+// instrument(io, {
+//   auth: false,
+//   mode: "development",
+// });
+// httpServer.listen(3000);
+
 const io = require("socket.io")(3000, {
   cors: {
-    origin: "http://localhost:8080",
-    methods: ["GET", "POST"],
+    // origins: ["http://localhost:8080", "https://admin.socket.io/"],
+    origin: ["https://admin.socket.io", "http://localhost:8080"],
+    credentials: true,
+    // methods: ["GET", "POST"],
   },
 });
 
@@ -18,3 +37,5 @@ io.on("connection", (socket) => {
     socket.join(room);
   });
 });
+
+instrument(io, { auth: false });
