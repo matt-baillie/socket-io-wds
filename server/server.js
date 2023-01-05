@@ -24,6 +24,11 @@ const io = require("socket.io")(3000, {
   },
 });
 
+const userIO = io.of("/user");
+userIO.on("connection", () => {
+  console.log("connected to user namespace");
+});
+
 io.on("connection", (socket) => {
   socket.on("send-message", (message, room) => {
     console.log(room);

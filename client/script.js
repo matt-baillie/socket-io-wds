@@ -7,6 +7,7 @@ const roomInput = document.querySelector("#room-input");
 const form = document.querySelector("#form");
 
 const socket = io("http://localhost:3000");
+const userSocket = io("http://localhost:3000/user");
 socket.on("connect", () => {
   displayMessage(`You connected with id: ${socket.id}`);
   socket.emit("custom-event", 10, "Hi");
